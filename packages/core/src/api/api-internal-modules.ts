@@ -11,6 +11,7 @@ import { ServiceModule } from '../service/service.module';
 import { ConfigurableOperationCodec } from './common/configurable-operation-codec';
 import { CustomFieldRelationResolverService } from './common/custom-field-relation-resolver.service';
 import { IdCodecService } from './common/id-codec.service';
+import { AssetInterceptorResolver } from './middleware/asset-interceptor-resolver';
 import { AdministratorResolver } from './resolvers/admin/administrator.resolver';
 import { AssetResolver } from './resolvers/admin/asset.resolver';
 import { AuthResolver } from './resolvers/admin/auth.resolver';
@@ -89,6 +90,8 @@ import { ShopOrderResolver } from './resolvers/shop/shop-order.resolver';
 import { ShopPaymentMethodsResolver } from './resolvers/shop/shop-payment-methods.resolver';
 import { ShopProductsResolver } from './resolvers/shop/shop-products.resolver';
 import { ShopShippingMethodsResolver } from './resolvers/shop/shop-shipping-methods.resolver';
+
+const middlewareResolvers = [AssetInterceptorResolver];
 
 const adminResolvers = [
     AdministratorResolver,
@@ -200,7 +203,7 @@ export class ApiSharedModule {}
         DataImportModule,
         ...createDynamicGraphQlModulesForPlugins('admin'),
     ],
-    providers: [...adminResolvers, ...entityResolvers, ...adminEntityResolvers],
+    providers: [...adminResolvers, ...entityResolvers, ...adminEntityResolvers, ...middlewareResolvers],
     exports: [...adminResolvers],
 })
 export class AdminApiModule {}
@@ -210,7 +213,7 @@ export class AdminApiModule {}
  */
 @Module({
     imports: [ApiSharedModule, ...createDynamicGraphQlModulesForPlugins('shop')],
-    providers: [...shopResolvers, ...entityResolvers],
+    providers: [...shopResolvers, ...entityResolvers, ...middlewareResolvers],
     exports: [...shopResolvers],
 })
 export class ShopApiModule {}
