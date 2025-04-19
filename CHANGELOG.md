@@ -1,3 +1,23 @@
+## <small>1.1.1-k7 (2025-04-19)</small>
+
+
+#### Features
+
+* **admin-ui** Implement UI for scheduled tasks ([555bd11](https://github.com/vendure-ecommerce/vendure/commit/555bd11))
+* **core** Add cleanSessionsTask to default scheduled tasks ([05bb3c0](https://github.com/vendure-ecommerce/vendure/commit/05bb3c0))
+* **core** Add driverConfigs option to ApiOptions ([0fb10eb](https://github.com/vendure-ecommerce/vendure/commit/0fb10eb))
+* **core** Create session cleanup task, add docs to scheduler types ([f649bd7](https://github.com/vendure-ecommerce/vendure/commit/f649bd7)), closes [#1425](https://github.com/vendure-ecommerce/vendure/issues/1425)
+* **core** Implement basic task scheduling mechanism ([6160edd](https://github.com/vendure-ecommerce/vendure/commit/6160edd)), closes [#1425](https://github.com/vendure-ecommerce/vendure/issues/1425)
+* **core** Implement query for scheduled tasks ([3c657fb](https://github.com/vendure-ecommerce/vendure/commit/3c657fb)), closes [#1425](https://github.com/vendure-ecommerce/vendure/issues/1425)
+* **core** Implement update of enabled status of tasks ([6243ab8](https://github.com/vendure-ecommerce/vendure/commit/6243ab8))
+* **create** Add DefaultSchedulerPlugin to default config ([47e698d](https://github.com/vendure-ecommerce/vendure/commit/47e698d))
+* **dashboard** Implement UI for scheduled tasks ([4692b2d](https://github.com/vendure-ecommerce/vendure/commit/4692b2d))
+
+#### Fixes
+
+* **core** Align Express & types versions ([ba4111b](https://github.com/vendure-ecommerce/vendure/commit/ba4111b))
+* **core** Relax some express typings to prevent v4/v5 types conflicts ([97e53d5](https://github.com/vendure-ecommerce/vendure/commit/97e53d5))
+
 ## <small>3.2.2 (2025-04-03)</small>
 
 #### Fixes
